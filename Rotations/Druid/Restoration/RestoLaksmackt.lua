@@ -71,7 +71,7 @@ local function createOptions()
     local function rotationOptions()
         local section
         -- General Options
-        section = br.ui:createSection(br.ui.window.profile, "Forms - 20200515-0718")
+        section = br.ui:createSection(br.ui.window.profile, "Forms - 092607092020")
         br.ui:createDropdownWithout(section, "Cat Key", br.dropOptions.Toggle, 6, "Set a key for cat")
         br.ui:createDropdownWithout(section, "Bear Key", br.dropOptions.Toggle, 6, "Set a key for bear")
         br.ui:createDropdownWithout(section, "Travel Key", br.dropOptions.Toggle, 6, "Set a key for travel")
@@ -1150,29 +1150,6 @@ local function runRotation()
                                             br.addonDebug("[PRE-HOT]Rejuv on: " .. UnitName(br.friend[j].unit) .. " because: " .. spell_name)
                                             return true
                                         end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                    local Casting = {
-                        --spell_id	, spell_name
-                        { 196587, 'Soul Burst' }, --Amalgam of Souls
-                        { 211464, 'Fel Detonation' }, --Advisor Melandrus
-                        { 237276, 'Pulverizing Cudgel' }, --Thrashbite the Scornful
-                        { 193611, 'Focused Lightning' }, --Lady Hatecoil
-                        { 192305, 'Eye of the Storm' }, --Hyrja
-                        { 239132, 'Rupture Realities' }, --Fallen Avatar
-                    }
-                    for i = 1, #Casting do
-                        local spell_id = Casting[i][1]
-                        local spell_name = Casting[i][2]
-                        for j = 1, #br.friend do
-                            if UnitInRange(br.friend[j].unit) then
-                                if UnitCastingInfo("boss1") == GetSpellInfo(spell_id) and not buff.rejuvenation.exists(br.friend[j].unit) then
-                                    if cast.rejuvenation(br.friend[j].unit) then
-                                        br.addonDebug("[DBM PRE-HOT]Rejuv on: " .. UnitName(br.friend[j].unit) .. " because: " .. spell_name)
-                                        return
                                     end
                                 end
                             end
